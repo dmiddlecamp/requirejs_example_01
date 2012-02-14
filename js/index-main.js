@@ -6,7 +6,12 @@ require(["jquery", "booper"], function($, Booper) {
     var b = new Booper();
 
     //events
-    $("#name").on('change', function(evt) {
-        b.boop( $(this).val() );
-    });
+    var doBoop = function(evt) {
+        b.boop( $("#name").val() );
+    };
+
+    $("#name").on('change', doBoop);
+    $("#btnBoop").on('click', doBoop);
+
+
 });
